@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Happiness Score in Asian Countries, 2020",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://karrkei.github.io/FIT3179/data/asia_map.json",
+    "format": {"type": "topojson", "feature": "custom"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://karrkei.github.io/FIT3179/data/2020_cleaned.csv"
+        },
+        "key": "Country",
+        "fields": ["Score"]
+      }
+    }
+  ],
+  "projection": {"type": "equalEarth"},
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Score",
+      "type": "quantitative",
+      "scale": {"type": "linear"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {
+        "field": "Score",
+        "type": "quantitative",
+        "title": "Happiness Score",
+        "format": ".2f"
+      }
+    ]
+  },
+  "config": {}
+}

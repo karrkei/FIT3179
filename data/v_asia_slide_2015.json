@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Happiness Score in Asian Countries, 2015",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://karrkei.github.io/FIT3179/data/asia_map.json",
+    "format": {"type": "topojson", "feature": "custom"}
+  },
+  "params": [
+    {
+      "name": "Min_Score",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "name": "Minimum Happiness Score: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://karrkei.github.io/FIT3179/data/2015_cleaned.csv"
+        },
+        "key": "Country",
+        "fields": ["Score", "Year"]
+      }
+    }
+  ],
+  "projection": {"type": "equalEarth"},
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Score",
+      "type": "quantitative",
+      "scale": {"type": "linear"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {"field": "Score", "type": "quantitative", "title": "Happiness Score"},
+      {"field": "Year", "type": "quantitative", "title": "Happiness Score"}
+    ],
+    "opacity": {
+      "condition": {"test": "datum.Score >=Min_Score", "value": 1},
+      "value": 0.2
+    }
+  },
+  "config": {}
+}
