@@ -1,0 +1,146 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": {
+    "text": "Happiness Rank in South East Asia, 2015-2020",
+    "fontSize": 18
+  },
+  "data": {"url": "https://karrkei.github.io/FIT3179/data/se_asia.csv"},
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "Year",
+      "type": "temporal",
+      "title": "Year",
+      "scale": {"domain": [2015, 2020]},
+      "axis": {"tickCount": 6}
+    },
+    "y": {
+      "field": "Rank",
+      "type": "quantitative",
+      "title": "Happiness Rank",
+      "sort": "descending",
+      "scale": {"domain": [1, 10]}
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "legend": {
+        "titleFontSize": 13,
+        "symbolType": "circle",
+        "symbolSize": 150,
+        "labelFontSize": 13,
+        "symbolStrokeWidth": 3
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"timeUnit": "year", "field": "Year", "title": "Year"},
+      {
+        "field": "Score",
+        "type": "quantitative",
+        "title": "Happiness Score",
+        "format": ".3f"
+      },
+      {"field": "Rank", "type": "quantitative", "title": "Happiness Rank"}
+    ],
+    "opacity": {"condition": {"selection": "country", "value": 1}, "value": 0.2}
+  },
+  "layer": [
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Malaysia"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}},
+      "selection": {
+        "country": {"type": "multi", "fields": ["Country"], "bind": "legend"}
+      }
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Malaysia"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Singapore"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Singapore"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Indonesia"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Indonesia"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Vietnam"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Vietnam"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Thailand"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Thailand"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Philippines"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Philippines"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Laos"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Laos"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Myanmar"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Myanmar"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Cambodia"}}],
+      "mark": {"type": "circle", "size": 150},
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Cambodia"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "Rank"}}
+    }
+  ],
+  "config": {}
+}
