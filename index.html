@@ -127,10 +127,10 @@
   </div> <!-- end page -->
    
 <script type="text/javascript">
-  var specVis1 = "vegalite/world_map_2020.json";
-  var specVis2= "vegalite/asia_map_2020.json";
+  var worldMapVis = "https://karrkei.github.io/FIT3179/vegalite/world_map_2020.json";
+  var specVis2= "https://karrkei.github.io/FIT3179/vegalite/asia_map_2020.json";
 
-  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+  vegaEmbed('#vis1', worldMapVis, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
@@ -138,7 +138,7 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#vis3', specVis1, {"actions": false}).then(function(result) {
+  vegaEmbed('#vis3', worldMapVis, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
