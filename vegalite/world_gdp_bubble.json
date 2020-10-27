@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 700,
+  "width": 600,
   "height": 500,
   "title": "Graph of GDP against Happiness Score, 2015-2019",
   "description": "Google's stock price over time.",
