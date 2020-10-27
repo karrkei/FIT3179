@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Happiness Score in Asian Countries, 2020",
+  "title": {
+    "text": "Happiness Score in Asian Countries, 2020",
+    "fontSize": 20
+  },
   "width": 500,
   "height": 400,
   "data": {
