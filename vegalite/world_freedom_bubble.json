@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": "Graph of Global Freedom Level against Happiness Score, 2015-2019",
+  "description": "Google's stock price over time.",
+  "data": {"url": "https://karrkei.github.io/FIT3179/data/happiness.csv"},
+  "transform": [
+    {
+      "filter": {
+        "field": "Year",
+        "oneOf": ["2015", "2016", "2017", "2018", "2019"]
+      }
+    }
+  ],
+  "selection": {
+    "region_highlight": {
+      "type": "multi",
+      "fields": ["Region"],
+      "bind": "legend"
+    }
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "Freedom", "type": "quantitative", "title": "Freedom Level"},
+    "y": {"field": "Score", "type": "quantitative"},
+    "color": {
+      "field": "Region",
+      "scale": {"scheme": "viridis"},
+      "legend": {
+        "titleFontSize": 12,
+        "symbolType": "circle",
+        "symbolSize": 200,
+        "labelFontSize": 11,
+        "symbolStrokeWidth": 3
+      }
+    },
+    "opacity": {
+      "condition": {"selection": "region_highlight", "value": 0.6},
+      "value": 0
+    },
+    "tooltip": [
+      {"field": "Country", "type": "ordinal", "title": "Country"},
+      {"field": "Region", "type": "ordinal", "title": "Region"},
+      {
+        "field": "Score",
+        "type": "quantitative",
+        "title": "Happiness Score",
+        "format": ".3f"
+      },
+      {
+        "field": "Freedom",
+        "type": "quantitative",
+        "title": "Freedom Level",
+        "format": ".3f"
+      }
+    ]
+  },
+  "config": {}
+}

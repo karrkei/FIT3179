@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": {"text": "GDP in South East Asia, 2015-2019", "fontSize": 18},
+  "data": {"url": "https://karrkei.github.io/FIT3179/data/happiness.csv"},
+  "transform": [
+    {"filter": {"timeUnit": "year", "field": "Year", "lte": "2019"}}
+  ],
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "Year",
+      "type": "temporal",
+      "title": "Year",
+      "scale": {"domain": [2015, 2019]},
+      "axis": {"tickCount": 6}
+    },
+    "y": {"field": "GDP", "type": "quantitative", "title": "GDP"},
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "legend": {
+        "titleFontSize": 13,
+        "symbolType": "circle",
+        "symbolSize": 250,
+        "labelFontSize": 13,
+        "symbolStrokeWidth": 3
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "ordinal", "title": "Country"},
+      {"field": "Region", "type": "ordinal", "title": "Region"},
+      {"timeUnit": "year", "field": "Year", "title": "Year"},
+      {"field": "GDP", "type": "quantitative", "title": "GDP", "format": ".3f"}
+    ],
+    "opacity": {"condition": {"selection": "country", "value": 1}, "value": 0.2}
+  },
+  "layer": [
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Malaysia"}}],
+      "mark": "line",
+      "selection": {
+        "country": {"type": "multi", "fields": ["Country"], "bind": "legend"}
+      },
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Singapore"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Indonesia"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Vietnam"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Thailand"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Philippines"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Laos"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Myanmar"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    },
+    {
+      "transform": [{"filter": {"field": "Country", "equal": "Cambodia"}}],
+      "mark": "line",
+      "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
+    }
+  ],
+  "config": {}
+}

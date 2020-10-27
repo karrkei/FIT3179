@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Google's stock price over time.",
+  "data": {"url": "https://karrkei.github.io/FIT3179/data/happiness.csv"},
+  "transform": [
+    {"filter": "datum.Country == 'Indonesia'"},
+    {"filter": {"timeUnit": "year", "field": "Year", "lte": "2019"}}
+  ],
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "timeUnit": "year",
+      "title": "Year",
+      "scale": {"domain": [2015, 2019]},
+      "axis": {"tickCount": 6}
+    },
+    "y": {"field": "GDP", "type": "quantitative"}
+  },
+  "config": {}
+}

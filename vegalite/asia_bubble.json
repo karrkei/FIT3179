@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "description": "Google's stock price over time.",
+  "data": {"url": "https://karrkei.github.io/FIT3179/data/se_asia.csv"},
+  "transform": [
+    {"filter": {"timeUnit": "year", "field": "Year", "lte": "2019"}}
+  ],
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "GDP", "type": "quantitative", "title": "GDP"},
+    "y": {"field": "Score", "type": "quantitative"},
+    "color": {"field": "Country"}
+  },
+  "config": {}
+}
