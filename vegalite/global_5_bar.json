@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": {"text": "Top 5 Happiest Country, 2020", "fontSize": 15},
+  "width": 250,
+  "height": 175,
+  "description": "Bar chart with text labels. Apply scale padding to make the frame cover the labels.",
+  "data": {"url": "https://karrkei.github.io/FIT3179/data/2020_cleaned.csv"},
+  "transform": [
+    {
+      "filter": {
+        "field": "Country",
+        "oneOf": ["Finland", "Denmark", "Switzerland", "Iceland", "Norway"]
+      }
+    }
+  ],
+  "encoding": {
+    "y": {"field": "Score", "type": "quantitative", "title": "Happiness Score"},
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Country",
+      "sort": "-y",
+      "axis": {"labels": false}
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {"color": {"field": "Country", "scale": {"scheme": "accent"}}}
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 3,
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {"field": "Score", "type": "quantitative", "format": ".3f"}
+      }
+    }
+  ],
+  "config": {}
+}
