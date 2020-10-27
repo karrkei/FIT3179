@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
-  "height": 400,
-  "title": "Graph of GDP against Happiness Score in South East Asian Countries, 2015-2019",
+  "height": 350,
+  "title": {"text": "Graph of GDP against Happiness Score in South East Asian Countries, 2015-2019", "fontSize": 20},
   "description": "Google's stock price over time.",
   "data": {"url": "https://karrkei.github.io/FIT3179/data/se_asia.csv"},
   "selection": {

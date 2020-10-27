@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
-  "height": 400,
-  "title": {"text": "GDP in South East Asia, 2015-2019", "fontSize": 18},
+  "height": 350,
+  "title": {"text": "GDP in South East Asia, 2015-2019", "fontSize": 20},
   "data": {"url": "https://karrkei.github.io/FIT3179/data/happiness.csv"},
   "transform": [
     {"filter": {"timeUnit": "year", "field": "Year", "lte": "2019"}}
@@ -84,7 +84,34 @@
       "transform": [{"filter": {"field": "Country", "equal": "Cambodia"}}],
       "mark": "line",
       "encoding": {"x": {"field": "Year"}, "y": {"field": "GDP"}}
-    }
-  ],
-  "config": {}
+    },
+    {
+          "transform": [
+              {"filter": 
+                  {"field": "Country", "equal":"Malaysia"}
+              }
+          ],
+          "mark": {
+              "type": "text", 
+              "align": "left", 
+              "baseline": "middle", 
+              "dx": -12, "fontSize": 11.5, 
+              "fontStyle": "italic"
+          }, 
+          "encoding": {
+              "text": {
+                  "field": "GDP", 
+                  "type": "quantitative",
+                  "format": ".2f"
+              }, 
+              "color": {
+                  "value": "black"
+              },
+              "opacity": {
+                  "value": 0.65
+              }
+          } 
+      }
+      
+  ]
 }
