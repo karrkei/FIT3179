@@ -26,7 +26,7 @@
   "layer": [
     {
       "mark": "bar",
-      "encoding": {"color": {"field": "Country", "scale": {"scheme": "accent"}}}
+      "encoding": {"color": {"field": "Country", "scale": {"scheme": "viridis"}}}
     },
     {
       "mark": {
