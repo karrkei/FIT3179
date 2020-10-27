@@ -55,13 +55,6 @@
       margin-right: auto;
      
     }
-    .vis-container2{
-      height:500%;
-      width: 100%;
-    }
-    .vis-containe3{
-      width: 50%;
-    }
   </style>
 </head>
 <body>
@@ -176,7 +169,8 @@
   var bumpChartVis= "https://karrkei.github.io/FIT3179/vegalite/bump_chart.json";
   var worldGDPBubbleVis= "https://karrkei.github.io/FIT3179/vegalite/world_gdp_bubble.json";
   var asiaGDPBubbleVis= "https://karrkei.github.io/FIT3179/vegalite/asia_gdp_bubble.json";
-  var lineChartVis= "https://karrkei.github.io/FIT3179/vegalite/score_line_chart.json";
+  var scoreLineChartVis= "https://karrkei.github.io/FIT3179/vegalite/score_line_chart.json";
+  var GDPLineChartVis= "https://karrkei.github.io/FIT3179/vegalite/gdp_line_chart.json";
 
 
 
@@ -200,7 +194,11 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#vis6', lineChartVis, {"actions": false}).then(function(result) {
+  vegaEmbed('#vis6', scoreLineChartVis, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis7', GDPLineChartVis, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
