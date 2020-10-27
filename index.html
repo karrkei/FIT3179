@@ -105,18 +105,12 @@
     
     <!-- TOP 5 COUNTRIES -->
     <div class="pure-g">
-        <div class="pure-u-1-2">
-          <div class="description description-right">
-            <h2>Top 5 Happiest Countries, 2020</h2>
-            <p>In 2020, Israel has the highest happiness score of 7.129 🏁</p>
-          </div>
-        </div>
-        <div class="pure-u-1-2">
-          <div class="description description-right">
-            <h2>Top 5 Happiest Countries in Asia, 2020</h2>
-            <p>In 2020, Israel has the highest happiness score of 7.129 🏁</p>
-          </div>
-        </div>
+      <div class="pure-u-1-2">
+        <div id="vis2"  class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis8"  class="vis-container"></div>
+      </div>
       
     </div>
     <!-- end pure grid group -->
@@ -209,12 +203,13 @@
    
 <script type="text/javascript">
   var worldMapVis = "https://karrkei.github.io/FIT3179/vegalite/world_map_2020.json";
-  var asiaMapVis= "https://karrkei.github.io/FIT3179/vegalite/asia_map_slide_2020.json";
   var bumpChartVis= "https://karrkei.github.io/FIT3179/vegalite/bump_chart.json";
   var worldGDPBubbleVis= "https://karrkei.github.io/FIT3179/vegalite/world_gdp_bubble.json";
   var asiaGDPBubbleVis= "https://karrkei.github.io/FIT3179/vegalite/asia_gdp_bubble.json";
   var scoreLineChartVis= "https://karrkei.github.io/FIT3179/vegalite/score_line_chart.json";
   var GDPLineChartVis= "https://karrkei.github.io/FIT3179/vegalite/gdp_line_chart.json";
+  var globalBarChartVis= "https://karrkei.github.io/FIT3179/vegalite/global_5_bar.json";
+  var asiaBarChartVis= "https://karrkei.github.io/FIT3179/vegalite/asia_5_bar.json";
 
 
 
@@ -222,7 +217,7 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-   vegaEmbed('#vis2', asiaMapVis, {"actions": false}).then(function(result) {
+   vegaEmbed('#vis2', globalBarChartVis, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
@@ -243,6 +238,10 @@
   }).catch(console.error);
 
   vegaEmbed('#vis7', GDPLineChartVis, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis8', asiaBarChartVis, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
