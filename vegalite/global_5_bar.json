@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": {"text": "Top 5 Happiest Country, 2020", "fontSize": 15},
+  "title": {"text": "Top 5 Happiest Countries, 2020", "fontSize": 15},
   "width": 250,
   "height": 175,
   "description": "Bar chart with text labels. Apply scale padding to make the frame cover the labels.",
