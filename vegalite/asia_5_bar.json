@@ -37,7 +37,7 @@
   "layer": [
     {
       "mark": "bar",
-      "encoding": {"color": {"field": "Country", "scale": {"scheme": "plasma"}}}
+      "encoding": {"color": {"field": "Country", "scale": {"scheme": "pastel1"}}}
     },
     {
       "mark": {
