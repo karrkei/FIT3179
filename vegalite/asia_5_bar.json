@@ -8,13 +8,13 @@
   "width": 250,
   "height": 175,
   "description": "Bar chart with text labels. Apply scale padding to make the frame cover the labels.",
-  "data": {"url": "https://karrkei.github.io/FIT3179/data/2020_cleaned.csv"},
+  "data": {"url": "https://karrkei.github.io/FIT3179/data/2020_tw.csv"},
   "transform": [
     {
       "filter": {
         "field": "Country",
         "oneOf": [
-          "Taiwan Province of China",
+          "Taiwan",
           "Singapore",
           "Philippines",
           "Thailand",
