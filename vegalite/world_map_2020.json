@@ -4,6 +4,7 @@
     "text": "Global Happiness Score, 2020",
     "fontSize": 20
   },
+  "background":"ivory",
   "width": 800,
   "height": 500,
   "data": {
