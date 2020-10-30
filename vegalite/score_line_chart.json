@@ -7,6 +7,7 @@
     "text": "Happiness Score in South East Asia, 2015-2020",
     "fontSize": 20
   },
+  "description": "A line chart showing the happiness scores of nine South East Asian countries, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand and Vietnam from 2015 to 2020. ",
   "data": {"url": "https://karrkei.github.io/FIT3179/data/happiness.csv"},
   "encoding": {
     "x": {

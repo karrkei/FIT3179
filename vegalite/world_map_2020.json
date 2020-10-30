@@ -4,6 +4,7 @@
     "text": "Global Happiness Score, 2020",
     "fontSize": 20
   },
+  "description": "A choropleth map showing the distribution of global happiness scores in 2020.",
   "background":"ivory",
   "width": 800,
   "height": 500,

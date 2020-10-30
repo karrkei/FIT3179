@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": {"text": "Top 5 Happiest Countries, 2020", "fontSize": 15},
+  "description": "A bar chart showing the top five happiest countries in the world in 2020",
   "background": "ivory",
   "width": 250,
   "height": 175,
-  "description": "Bar chart with text labels. Apply scale padding to make the frame cover the labels.",
   "data": {"url": "https://karrkei.github.io/FIT3179/data/2020_cleaned.csv"},
   "transform": [
     {

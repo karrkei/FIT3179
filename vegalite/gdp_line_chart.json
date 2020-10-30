@@ -8,6 +8,7 @@
   "transform": [
     {"filter": {"timeUnit": "year", "field": "Year", "lte": "2019"}}
   ],
+  "description": "A line chart showing the GDP of nine South East Asian countries, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand and Vietnam from 2015 to 2019. ",
   "encoding": {
     "x": {
       "timeUnit": "year",

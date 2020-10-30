@@ -7,6 +7,7 @@
     "text": "Happiness Rank in South East Asia, 2015-2020",
     "fontSize": 20
   },
+  "description": "A bump chart showing the ranks of nine South East Asian countries, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand and Vietnam in terms of happiness scores from 2015 to 2020. ",
   "data": {"url": "https://karrkei.github.io/FIT3179/data/se_asia.csv"},
   "encoding": {
     "x": {
