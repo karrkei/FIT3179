@@ -3,7 +3,7 @@
   "width": 500,
   "height": 350,
   "background":"ivory",
-  "title": {"text": "GDP in South East Asia, 2015-2019", "fontSize": 20},
+  "title": {"text": "GDP in South East Asia, 2015–2019", "fontSize": 20},
   "data": {"url": "https://karrkei.github.io/FIT3179/data/happiness.csv"},
   "transform": [
     {"filter": {"timeUnit": "year", "field": "Year", "lte": "2019"}}
